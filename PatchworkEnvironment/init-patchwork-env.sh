@@ -15,6 +15,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install oh-my-posh
 brew install gcc
+brew install cmake
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 
