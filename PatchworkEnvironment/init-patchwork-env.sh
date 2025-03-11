@@ -1,10 +1,20 @@
 #!/bin/bash
 
+# Ensure we're on a Debian-based system
+if [ ! -f /etc/debian_version ]; then
+  echo "This script is only for Debian-based systems"
+  exit
+fi
+
 # Need to run as sudo
 if [ "$EUID" -eq 0 ]
   then echo "Please do not run as root"
   exit
 fi
+
+# Install build tools
+sudo apt-get update
+sudo apt-get install build-essential
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -14,8 +24,6 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$me/.bash
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install oh-my-posh
-brew install gcc
-brew install cmake
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 
