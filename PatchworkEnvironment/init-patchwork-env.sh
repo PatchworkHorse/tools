@@ -29,7 +29,7 @@ wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/theme
 unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
 
 # Get our bashrc extension, append to ~/.bashrc
-echo "source ~/.patchwork.bashrc" >> ~/.bashrc
+wget https://raw.githubusercontent.com/PatchworkHorse/tools/refs/heads/main/PatchworkEnvironment/.patchwork.bashrc -O ~/.patchwork.bashrc
 
 # Reload bashrc
 . ~/.bashrc
