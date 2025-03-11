@@ -11,7 +11,7 @@ mkdir -p ~/.poshthemes
 wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
 unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
 
-# Append patchwork to bashrc
+# Get our bashrc extension, append to ~/.bashrc
 echo "source ~/.patchwork.bashrc" >> ~/.bashrc
 
 # Reload bashrc
