@@ -26,7 +26,8 @@ fi
 # Download and unzip themes
 mkdir -p ~/.poshthemes
 wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
-unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+
+unzip -o ~/.poshthemes/themes.zip -d ~/.poshthemes
 
 # Get our bashrc extension, append to ~/.bashrc
 wget https://raw.githubusercontent.com/PatchworkHorse/tools/refs/heads/main/PatchworkEnvironment/.patchwork.bashrc -O ~/.patchwork.bashrc
