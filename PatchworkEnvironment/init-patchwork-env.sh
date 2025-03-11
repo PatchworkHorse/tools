@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Install Homebrew
+# Install Homebrew, add to bashrc
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> ~/.bashrc
 
 # Install oh-my-posh
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
