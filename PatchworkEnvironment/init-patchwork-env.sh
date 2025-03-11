@@ -1,8 +1,17 @@
 #!/bin/bash
 
-# Install Homebrew, add to bashrc
+# Need to run as sudo
+if [ "$EUID" -eq 0 ]
+  then echo "Please do not run as root"
+  exit
+fi
+
+# Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo >> ~/.bashrc
+$me = whoami
+echo >> /home/$me/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$me/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install oh-my-posh
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
