@@ -24,13 +24,12 @@ then
 fi
 
 # Download and unzip themes
-mkdir -p ~/.poshthemes
-wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+mkdir -p $me/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O $me/.poshthemes/themes.zip
+unzip -o ~/.poshthemes/themes.zip -d $me/poshthemes
 
 # Install oh-my-posh
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
-
-unzip -o ~/.poshthemes/themes.zip -d 
 
 # Get our bashrc extension, source in ~/.bashrc
 wget https://raw.githubusercontent.com/PatchworkHorse/tools/refs/heads/main/PatchworkEnvironment/.patchwork.bashrc -O ~/.patchwork.bashrc
