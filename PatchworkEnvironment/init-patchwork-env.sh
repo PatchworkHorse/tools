@@ -6,6 +6,12 @@ if [ "$EUID" -eq 0 ]
   exit
 fi
 
+# If this isn't Debian or Ubuntu, we can't continue
+if [ ! -f /etc/debian_version ]; then
+  echo "This script is only for Debian-based systems"
+  exit
+fi
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 me=$(whoami)
@@ -17,11 +23,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 # Install unzip (if not already installed)
-if ! command -v unzip &> /dev/null
-then
-    echo "unzip could not be found, installing..."
-    brew install unzip
-fi
+sudo apt-get update
+sudo apt-get install build-essential
 
 # Download and unzip themes
 mkdir -p $me/.poshthemes
