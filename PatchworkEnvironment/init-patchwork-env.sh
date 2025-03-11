@@ -6,12 +6,6 @@ if [ "$EUID" -eq 0 ]
   exit
 fi
 
-# If this isn't Debian or Ubuntu, we can't continue
-if [ ! -f /etc/debian_version ]; then
-  echo "This script is only for Debian-based systems"
-  exit
-fi
-
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 me=$(whoami)
@@ -20,11 +14,9 @@ echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$me/.bash
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Install oh-my-posh
+brew install gcc
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
-# Install unzip (if not already installed)
-sudo apt-get update
-sudo apt-get install build-essential
 
 # Download and unzip themes
 mkdir -p $me/.poshthemes
