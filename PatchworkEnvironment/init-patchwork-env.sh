@@ -27,6 +27,9 @@ fi
 mkdir -p ~/.poshthemes
 wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
 
+# Install oh-my-posh
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+
 unzip -o ~/.poshthemes/themes.zip -d 
 
 # Get our bashrc extension, source in ~/.bashrc
