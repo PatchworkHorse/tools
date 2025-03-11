@@ -8,8 +8,7 @@ fi
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-$me = $(whoami)
-echo $me
+me=$(whoami)
 echo >> /home/$me/.bashrc
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/$me/.bashrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
