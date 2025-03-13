@@ -18,7 +18,7 @@
 export PATH=~/homebrew/bin:$PATH
 
 # Install oh-my-posh
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
+brew install jandedobbeleer/oh-my-posh/oh-my-s
 
 # Download and unzip themes
 mkdir -p $me/.poshthemes
