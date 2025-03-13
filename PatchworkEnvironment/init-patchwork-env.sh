@@ -4,8 +4,7 @@
 if [ -f /etc/debian_version ]; then
   echo "This is a Debian-based system. Would you like to install build-essential to speed up the installation of some packages?"
   echo "This will require sudo access."
-  echo "(y/n)"
-  read -r response
+  read -p "(y/n): " -r response
   if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
     sudo apt-get update
     sudo apt-get install -y build-essential golang-go
